@@ -24,7 +24,7 @@ export function getAverageGrade(grades: number[]): number {
 
 export function sortStudents(
   students: Student[], sortBy: SortType, order: SortOrder,
-): Student {
+): Student[] {
   const sortedStudents: Student[] = [...students];
   let result: Student[];
 
@@ -76,7 +76,7 @@ export function sortStudents(
 
     case SortType.AverageGrade:
       if (order === 'desc') {
-        result = students.sort((student1, student2) => getAverageGrade(
+        result = sortedStudents.sort((student1, student2) => getAverageGrade(
           student2.grades,
         ) - getAverageGrade(student1.grades));
       }
