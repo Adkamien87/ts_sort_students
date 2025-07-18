@@ -76,15 +76,15 @@ export function sortStudents(
 
     case SortType.AverageGrade:
       if (order === 'desc') {
-        result = sortedStudents.sort((student1, student2) => getAverageGrade(
-          student2.grades,
-        ) - getAverageGrade(student1.grades));
+        result = sortedStudents.sort((user1, user2) => getAverageGrade(
+          user2.grades,
+        ) - getAverageGrade(user1.grades));
       }
 
       if (order === 'asc') {
-        result = students.sort((student1, student2) => getAverageGrade(
-          student1.grades,
-        ) - getAverageGrade(student2.grades));
+        result = sortedStudents.sort((user1, user2) => getAverageGrade(
+          user1.grades,
+        ) - getAverageGrade(user2.grades));
       }
 
       break;
